@@ -28,6 +28,6 @@ ces2022 <-
 
 
 #### Save data ####
-##write_csv(ces2022, "starter_folder-main/data/raw_data/ces2022.csv")
+write_csv(ces2022, "starter_folder-main/data/raw_data/ces2022.csv")
 
          
