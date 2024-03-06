@@ -2,8 +2,7 @@
 title: "My title"
 subtitle: "My subtitle if needed"
 author: 
-  - First author
-  - Another author
+  - Sean Liu
 thanks: "Code and data are available at: LINK."
 date: today
 date-format: long
@@ -17,9 +16,18 @@ bibliography: references.bib
 #| include: false
 #| warning: false
 #| message: false
-
+library(boot)
+library(broom.mixed)
+library(collapse)
+library(gutenbergr)
+library(janitor)
+library(knitr)
+library(marginaleffects)
+library(modelsummary)
+library(rstanarm)
+library(tidybayes)
 library(tidyverse)
-library(palmerpenguins)
+
 ```
 
 

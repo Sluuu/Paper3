@@ -1,26 +1,33 @@
 #### Preamble ####
-# Purpose: Downloads and saves the data from [...UPDATE THIS...]
-# Author: Rohan Alexander [...UPDATE THIS...]
-# Date: 11 February 2023 [...UPDATE THIS...]
-# Contact: rohan.alexander@utoronto.ca [...UPDATE THIS...]
+# Purpose: Downloads and saves the data from 
+# Author: Sean Liu
+# Date: 12 March 2024
+# Contact: yuhsiangg.liu@utoronto.ca 
 # License: MIT
-# Pre-requisites: [...UPDATE THIS...]
-# Any other information needed? [...UPDATE THIS...]
+# Pre-requisites: 
 
 
 #### Workspace setup ####
 library(opendatatoronto)
 library(tidyverse)
-# [...UPDATE THIS...]
+library(dplyr)
+library(dataverse)
+
 
 #### Download data ####
-# [...ADD CODE HERE TO DOWNLOAD...]
+ces2022 <-
+  get_dataframe_by_name(
+    filename = "CCES22_Common_OUTPUT_vv_topost.csv",
+    dataset = "10.7910/DVN/PR4L8P",
+    server = "dataverse.harvard.edu",
+    .f = read_csv
+  ) |>
+  select(votereg, CC22_411, gender, educ)
+
 
 
 
 #### Save data ####
-# [...UPDATE THIS...]
-# change the_raw_data to whatever name you assigned when you downloaded it.
-write_csv(the_raw_data, "inputs/data/raw_data.csv") 
+##write_csv(ces2022, "starter_folder-main/data/raw_data/ces2022.csv")
 
          
