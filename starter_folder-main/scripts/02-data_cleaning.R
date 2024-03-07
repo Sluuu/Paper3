@@ -52,7 +52,7 @@ ces2022 <-
     )
   ) |>
   select(voted_for, gender, education)
-
+###
 ces2022
 
 #### Save data ####
