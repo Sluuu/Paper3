@@ -1,11 +1,11 @@
 #### Preamble ####
 # Purpose: Cleans the raw plane data recorded by two observers..... [...UPDATE THIS...]
-# Author: Rohan Alexander [...UPDATE THIS...]
-# Date: 6 April 2023 [...UPDATE THIS...]
-# Contact: rohan.alexander@utoronto.ca [...UPDATE THIS...]
+# Author: Sean Liu
+# Date: 12 March 2024
+# Contact: yuhsiang.liu@mail.utoronto.ca
 # License: MIT
-# Pre-requisites: [...UPDATE THIS...]
-# Any other information needed? [...UPDATE THIS...]
+# Pre-requisites: You will have to run through 01-download_data.R and have it saved locally.
+# Any other information needed? 
 
 #### Workspace setup ####
 library(tidyverse)
@@ -28,9 +28,9 @@ ces2022 <-
   filter(votereg == 1,
          CC22_411 %in% c(1, 2)) |>
   mutate(
-    voted_for = if_else(CC20_411 == 1, "Biden", "Trump"),
+    voted_for = if_else(CC22_411 == 1, "Biden", "Trump"),
     voted_for = as_factor(voted_for),
-    gender = if_else(gender == 1, "Male", "Female"),
+    gender = if_else(gender4 == 1, "Male", "Female"),
     education = case_when(
       educ == 1 ~ "No HS",
       educ == 2 ~ "High school graduate",
